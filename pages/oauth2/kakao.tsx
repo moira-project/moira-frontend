@@ -1,10 +1,12 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
-import Router from 'next/router';
+import Router, { useRouter } from 'next/router';
 import styles from '../styles/Home.module.css';
 
 const Home: NextPage = () => {
+	const router = useRouter();
+
 	const REST_API_KEY = '7acb4bfc12bf9d810137409f749daa4d';
 	const REDIRECT_URI = 'http://localhost:3000/oauth2/kakao';
 	const KAKAO_AUTH_URL = `https://kauth.kakao.com/oauth/authorize?client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code`;
@@ -38,6 +40,4 @@ const Home: NextPage = () => {
 		</div>
 	);
 };
-
 export default Home;
-// http://kauth.kakao.com/oauth/authorize?client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code
